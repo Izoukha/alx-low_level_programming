@@ -16,7 +16,7 @@ int main(void)
 				putchar(hundreds_c + '0');
 				putchar(tens_c + '0');
 				putchar(ones_c + '0');
-			
+
 				if (hundreds_c < 7 || tens_c < 8 || ones_c < 9)
 				{
 					putchar(',');
