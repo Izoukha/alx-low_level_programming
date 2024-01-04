@@ -1,36 +1,45 @@
 #include "main.h"
 
- /**
- * _atoi - Convert a string to an integer.
- * @s: The printer to convert
- * Return: A integer
+/**
+ * _atoi - Converts a string to an integer.
+ * @s: The string to be converted.
+ *
+ * Return: The converted integer.
  */
 int _atoi(char *s)
 {
 	int c = 0;
-	unsigned int ni = 0;
-	int min = 1;
-	int isi = 0;
+	int n = 1;
+	int d;
 
-	while (s([c])
+	while (*s)
+	{
+		if (*s == '-')
+		{
+			n *= -1;
+		}
+		else if (*s >= '0' && *s <= '9')
+		{
+			d = *s - '0';
+
+			if (c  > (INT_MAX - d) / 10)
 			{
-			if (s[c] == 45)
-			{
-			min *= -1;
+
+				if (n == 1)
+					return INT_MAX;
+				else
+					return INT_MIN;
 			}
-			while (s[c] >= 48 && s[c] <= 57)
-			{
-			isi = 1;
-			ni = (ni * 10) + (s[c] - '0')
-			c++;
-			}
-			if (isi == 1)
-			{
+
+			c = c * 10 + d;
+		}
+		else if (c != 0)
+		{
 			break;
-			}
-			c++;
-			}
-			ni *= min;
+		}
 
-			return (ni);
+		s++;
+	}
+
+	return (c * n);
 }
