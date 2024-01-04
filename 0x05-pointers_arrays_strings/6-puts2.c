@@ -8,14 +8,11 @@
  */
 void puts2(char *str)
 {
-	if (str == NULL)
-		return;
-
 	int i = 0;
 
 	while (str[i] != '\0')
 	{
-		printf("%d ", str[i]);
+		printf("%c (%d) ", str[i], str[i]);
 		_putchar(str[i]);
 		i += 2;
 	}
